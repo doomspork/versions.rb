@@ -1,8 +1,8 @@
-# Versions.rb
+# Versions.rb [![Build Status](https://travis-ci.org/doomspork/versions.rb.png?branch=version-0-1-1)](https://travis-ci.org/doomspork/versions.rb)
 
 _"Ruby class versioning made simple."_
 
-Latest version: __0.1.0__
+Latest version: __0.1.1__
 
 ## Quickstart
 
