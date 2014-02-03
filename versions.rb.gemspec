@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name        = 'Versions.rb'
+  s.name        = 'versions.rb'
   s.version     = '0.1.1' 
   s.summary     = 'Ruby class versioning made simple.'
   s.description = 'Versions.rb provides a simple method for handling libraries that require versioning.'
