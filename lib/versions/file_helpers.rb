@@ -1,20 +1,36 @@
-module FileHelpers
-  protected
+class Versions
+  module FileHelpers
+    protected
 
-  def path
-    @path ||= config.base_dir
-    File.join(@path, @library_name)
-  end
+    # Internal: Gets the path to the library's versions
+    #
+    # Return a directory path
+    def library_path
+      @path ||= Versions.config.base_dir
+      File.join(@path, @library_name)
+    end
 
-  def parse_filepath(path)
-    name   = File.basename(path, '.rb')
-    (match = config.filename_pattern.match(name)) ? match[1] : nil
-  end
+    # Internal: Parse a file path into a version string
+    #
+    # path - the file path to parse
+    #
+    # Returns a version String or nil
+    def parse_filepath(path)
+      name   = File.basename(path, '.rb')
+      (match = Versions.config.filename_pattern.match(name)) ? match[1] : nil
+    end
 
-  def map_file_versions
-    files    = Dir[File.join(path, '*.rb')]
-    files    = {} if files.empty?
-    versions = files.each_with_object({}) { |f, obj| obj[parse_filepath(f)] = f }
-    versions.delete_if { |k, _| k.nil? }
+    # Internal: Create a map of versions and files
+    #
+    # Returns a Hash
+    def map_file_versions
+      files    = Dir[File.join(library_path, '*.rb')]
+      files    = {} if files.empty?
+      versions = files.inject({}) do |memo, f| 
+        version_key      = parse_filepath(f)
+        memo[version_key] = f if version_key
+        memo 
+      end
+    end
   end
 end
