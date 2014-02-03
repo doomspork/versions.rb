@@ -15,8 +15,8 @@ Create a version (`lib/awesome_feature/v1.0.rb`):
 ```ruby
 module AwesomeFeature
   class V1_0
-    def perform
-      # Do AwesomeFeature stuff
+    def foo
+      :bar
     end
   end
 end
@@ -26,7 +26,7 @@ Use it:
 
 ```ruby
 VersionedFeature = Versions.for(:awesome_feature).select('1.0')
-feature          = VersionFeature.new
+feature          = VersionedFeature.new
 ```
 
 ## Configuration
