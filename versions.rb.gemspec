@@ -11,8 +11,9 @@ Gem::Specification.new do |s|
 
   s.required_ruby_version = '> 1.8'
 
-  s.add_development_dependency 'pry',           '~> 0.9.12.6'
-  s.add_development_dependency 'rr',            '~> 1.1.2'
-  s.add_development_dependency 'rspec',         '~> 2.14.1'
-  s.add_development_dependency 'simplecov',     '~> 0.8.2'
+  s.add_development_dependency 'coveralls', '~> 0.7.0'
+  s.add_development_dependency 'pry',       '~> 0.9.12.6'
+  s.add_development_dependency 'rr',        '~> 1.1.2'
+  s.add_development_dependency 'rspec',     '~> 2.14.1'
+  s.add_development_dependency 'simplecov', '~> 0.8.2'
 end
