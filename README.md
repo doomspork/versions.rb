@@ -1,8 +1,8 @@
-# Versions.rb [![Build Status](https://travis-ci.org/doomspork/versions.rb.png?branch=version-0-1-1)](https://travis-ci.org/doomspork/versions.rb)
+# Versions.rb
 
 _"Ruby class versioning made simple."_
 
-Latest version: __0.1.1__
+[![Gem Version](https://badge.fury.io/rb/versions.rb.png)](https://rubygems.org/gems/versions.rb) [![Build Status](https://travis-ci.org/doomspork/versions.rb.png?branch=version-0-1-1)](https://travis-ci.org/doomspork/versions.rb) [![Code Climate](https://codeclimate.com/github/doomspork/versions.rb.png)](https://codeclimate.com/github/doomspork/versions.rb)
 
 ## Quickstart
 
