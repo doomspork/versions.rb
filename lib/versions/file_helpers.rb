@@ -26,9 +26,9 @@ class Versions
     def map_file_versions
       files    = Dir[File.join(library_path, '*.rb')]
       files    = {} if files.empty?
-      versions = files.inject({}) do |memo, f| 
+      files.inject({}) do |memo, f| 
         version_key      = parse_filepath(f)
-        memo[version_key] = f if version_key
+        memo[version_key.to_sym] = f if version_key
         memo 
       end
     end

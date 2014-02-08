@@ -2,20 +2,11 @@ class Versions
   module ClassHelpers
     protected
 
-    # Internal: Turn a snake_case name into CamelCase
-    #
-    # lib_name - the library name in snake_case or CamelCase
-    #
-    # Returns a CamelCased String
-    def camelcase(lib_name)
-      lib_name.split(/_/).map(&:capitalize).join('')
-    end
-
     # Internal: The ClassName of the Library
     #
     # Returns a String
     def library_name
-      camelcase(@library_name)
+      camel_case(@library_name)
     end
 
     # Internal: Get the fully qualified class name with version
@@ -24,7 +15,7 @@ class Versions
     #
     # Returns a String
     def versioned_class_name(version)
-      safe_version = version.gsub(/\./, '_')
+      safe_version = version.to_s.gsub(/\./, '_')
       "#{library_name}::#{Versions.config.class_prefix}#{safe_version}"
     end
 

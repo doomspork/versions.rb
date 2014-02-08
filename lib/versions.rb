@@ -1,22 +1,24 @@
-require 'versions/versionable.rb'
+require 'versionable.rb'
 require 'versions/configurable.rb'
 require 'versions/file_helpers.rb'
 require 'versions/class_helpers.rb'
+require 'versions/string_helpers.rb'
+require 'versions/errors/version_not_available.rb'
 
 class Versions
-  extend Versionable
   extend Configurable
 
   include FileHelpers
   include ClassHelpers
+  include StringHelpers
 
   # Public: Sets up and returns a new instance
   #
   # mod - Symbol or String of the library name
   #
   # Returns an instance of Versions
-  def self.for(mod)
-    new(mod)
+  def self.for(library)
+    new(library)
   end
 
   # Public: Sets the base directory for this instance
@@ -36,6 +38,7 @@ class Versions
   # Returns the versioned Class
   # Raises VersionNotAvailableError
   def select(version)
+    version = version.to_sym
     if file = mapped_versions[version]
       load_class(version, file)
     else
@@ -49,7 +52,7 @@ class Versions
   #
   # Returns a Boolean
   def available?(version)
-    !!mapped_versions[version]
+    !!mapped_versions[version.to_sym]
   end
 
   # Public: Get the available versions
@@ -63,11 +66,11 @@ class Versions
 
   # Internal: Create a new instance
   #
-  # mod - Symbol or String of the library name
+  # library - Symbol or String of the library name
   #
   # Returns a new instance
-  def initialize(mod)
-    @library_name = mod.to_s
+  def initialize(library)
+    @library_name = snake_case(library.to_s)
   end
 
   # Internal: An internal map of versions and their respective files,

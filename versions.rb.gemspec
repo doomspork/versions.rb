@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.homepage    = 'https://github.com/doomspork/versions.rb'
   s.license     = 'MIT'
 
-  s.required_ruby_version = '>= 1.8.7'
+  s.required_ruby_version = '> 1.8'
 
   s.add_development_dependency 'pry',           '~> 0.9.12.6'
   s.add_development_dependency 'rr',            '~> 1.1.2'

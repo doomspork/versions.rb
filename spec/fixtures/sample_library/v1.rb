@@ -1,4 +1,4 @@
-module SampleLibrary
+class SampleLibrary
   class V1
     def version
       '1'
