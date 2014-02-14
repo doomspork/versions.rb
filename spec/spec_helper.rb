@@ -1,11 +1,10 @@
 require 'simplecov'
-require 'coveralls'
-require 'pry'
 
 ENV['RACK_ENV'] = 'test'
 
+SimpleCov.formatter = Coveralls::SimpleCov::Formatter if defined?(Coveralls)
+
 # Configure code coverage reporting
-SimpleCov.formatter = Coveralls::SimpleCov::Formatter
 SimpleCov.start do
   add_filter '/spec/'
   coverage_dir 'docs/coverage'
