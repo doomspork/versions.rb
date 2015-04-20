@@ -27,6 +27,8 @@ end
 Use it:
 
 ```ruby
+require 'versions'
+
 VersionedFeature = Versions.for(:awesome_feature).select('1.0')
 feature          = VersionedFeature.new
 ```
