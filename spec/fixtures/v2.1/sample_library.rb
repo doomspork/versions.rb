@@ -1,5 +1,5 @@
-class SampleLibrary
-  class V2_1
+module V2_1
+  class SampleLibrary
     attr_accessor :one, :two
 
     def initialize(one = 1, two = 2)

@@ -11,14 +11,14 @@ describe Versions do
     context 'with existing version' do
       it 'will be true' do
         avail = subject.available? '1'
-        expect(avail).to be_true
+        expect(avail).to be_truthy
       end
     end
 
     context 'with missing version' do
       it 'will be false' do
         avail = subject.available? '4.2.0'
-        expect(avail).to be_false
+        expect(avail).to be_falsey
       end
     end
   end
@@ -43,13 +43,13 @@ describe Versions do
     context 'with available version' do
       it 'will return the class' do
         vers = subject.select('2.1')
-        expect(vers).to eql SampleLibrary::V2_1
+        expect(vers).to eql V2_1::SampleLibrary
       end
     end
 
     context 'with missing version' do
       it 'will be raise an error' do
-        expect { subject.select('4.2.0') }.to raise_error 
+        expect { subject.select('4.2.0') }.to raise_error
       end
     end
   end

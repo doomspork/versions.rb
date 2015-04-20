@@ -16,7 +16,7 @@ class Versions
     # Returns a String
     def versioned_class_name(version)
       safe_version = version.to_s.gsub(/\./, '_')
-      "#{library_name}::#{Versions.config.class_prefix}#{safe_version}"
+      "#{Versions.config.class_prefix}#{safe_version}::#{library_name}"
     end
 
     # Internal: Load and return the Class

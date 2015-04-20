@@ -13,7 +13,8 @@ describe Versionable do
     context 'with available version' do
       it 'will return the class' do
         vers = subject.instance_of!('2.1')
-        expect(vers).to instance_of SampleLibrary::V2_1
+        expect(vers.version).to eql '2.1'
+        expect(vers).to instance_of V2_1::SampleLibrary
       end
 
       context 'with additional paramaters' do

@@ -1,5 +1,6 @@
 language: ruby
 rvm:
+  - 2.1.1
   - 2.0.0
   - 1.9.3
   - 1.9.2
@@ -10,11 +11,8 @@ jdk:
   - openjdk7
   - oraclejdk7
   - openjdk6
-script: rspec spec
+script: rspec
 matrix:
   allow_failures:
     - rvm: ruby-head
     - rvm: jruby-head
-notifications:
-  recipients:
-    - iamdoomspork@gmail.com

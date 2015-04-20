@@ -4,17 +4,19 @@ _"Ruby class versioning made simple."_
 
 [![Gem Version](https://badge.fury.io/rb/versions.rb.png)](https://rubygems.org/gems/versions.rb) [![Build Status](https://travis-ci.org/doomspork/versions.rb.png?branch=master)](https://travis-ci.org/doomspork/versions.rb) [![Code Climate](https://codeclimate.com/github/doomspork/versions.rb.png)](https://codeclimate.com/github/doomspork/versions.rb) [![Coverage Status](https://coveralls.io/repos/doomspork/versions.rb/badge.png?branch=master)](https://coveralls.io/r/doomspork/versions.rb)
 
+Ruby 1.9, 2.0, 2.1, and JRuby supported.
+
 ## Quickstart
 
 Install it:
 
 `gem install versions.rb`
 
-Create a version (`lib/awesome_feature/v1.0.rb`):
+Create a version (`lib/v1.0/awesome_feature.rb`):
 
 ```ruby
-module AwesomeFeature
-  class V1_0
+module V1_0
+  class AwesomeFeature
     def foo
       :bar
     end
@@ -46,11 +48,11 @@ Versions.for(:awesome_feature).at('./other/location').select('1.0')
 
 ## Contributing
 
-Please feel free to make use of [Issues][issues] and [Pull Requests][pr], all code must have accompanying specs.
+Please make appropriate use of [Issues][issues] and [Pull Requests][pr]. All code should have accompanying tests.
 
 ## Author/Contact
 
-Versions.rb is written and maintained by Spork (iamdoomspork@gmail.com).
+Versions.rb is written and maintained by [@doomspork](https://github.com/doomspork)
 
 ## License
 

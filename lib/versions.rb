@@ -23,7 +23,7 @@ class Versions
 
   # Public: Sets the base directory for this instance
   #
-  # path - path to the directory 
+  # path - path to the directory
   #
   # Returns self
   def at(path)
@@ -74,7 +74,7 @@ class Versions
   end
 
   # Internal: An internal map of versions and their respective files,
-  # the Hash keys are version strings and files as value. 
+  # the Hash keys are version strings and files as value.
   #
   # Returns a Hash
   def mapped_versions
