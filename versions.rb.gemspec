@@ -1,13 +1,17 @@
 Gem::Specification.new do |s|
   s.name        = 'versions.rb'
-  s.version     = '0.1.1' 
-  s.summary     = 'Ruby class versioning made simple.'
-  s.description = 'Versions.rb provides a simple method for handling libraries that require versioning.'
-  s.authors     = ['doomspork']
-  s.email       = 'iamdoomspork@gmail.com'
-  s.files       = ['lib/versions.rb', 'LICENSE']
+  s.version     = '1.0' 
+  s.summary     = 'Support for versioned class definitions.'
+  s.description = 'Using simple namespacing Versions.rb lets you load versions of your code on-demand.'
+  s.authors     = ['Sean Callan']
+  s.email       = 'seancallan@gmail.com'
   s.homepage    = 'https://github.com/doomspork/versions.rb'
   s.license     = 'MIT'
+
+  s.files         = `git ls-files -z`.split("\x0")
+  s.executables   = s.files.grep(%r{^bin/}) { |f| File.basename(f) }
+  s.test_files    = s.files.grep(%r{^(test|spec|features)/})
+  s.require_paths = ['lib']
 
   s.required_ruby_version = '> 1.9'
 
