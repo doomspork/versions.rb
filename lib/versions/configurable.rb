@@ -3,12 +3,12 @@ class Versions
 
     # A simple configuration wrapper
     class Config
-      attr_accessor :base_dir, :filename_pattern, :class_prefix 
+      attr_accessor :base_dir, :version_pattern, :class_prefix
 
       # The default base directory path
       BASE_DIR         = File.join(Dir.pwd, 'lib')
       # The default filename pattern
-      FILENAME_PATTERN = /^v(?:ersion)?[-_]?(\d+(?:\.\d+)*)$/i
+      VERSION_PATTERN  = /v(?:ersion)?[-_]?((\d+(?:\.\d+)*))/i
       # The default class prefix
       CLASS_PREFIX     = 'V'
 
@@ -17,7 +17,7 @@ class Versions
       # Returns a new instance
       def initialize
         self.base_dir         = BASE_DIR
-        self.filename_pattern = FILENAME_PATTERN
+        self.version_pattern  = VERSION_PATTERN
         self.class_prefix     = CLASS_PREFIX
       end
     end
@@ -26,7 +26,7 @@ class Versions
     #
     # Returns an instance of Config
     def config
-      @config ||= Config.new 
+      @config ||= Config.new
     end
   end
 end
