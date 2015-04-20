@@ -4,6 +4,8 @@ _"Ruby class versioning made simple."_
 
 [![Gem Version](https://badge.fury.io/rb/versions.rb.png)](https://rubygems.org/gems/versions.rb) [![Build Status](https://travis-ci.org/doomspork/versions.rb.png?branch=master)](https://travis-ci.org/doomspork/versions.rb) [![Code Climate](https://codeclimate.com/github/doomspork/versions.rb.png)](https://codeclimate.com/github/doomspork/versions.rb) [![Coverage Status](https://coveralls.io/repos/doomspork/versions.rb/badge.png?branch=master)](https://coveralls.io/r/doomspork/versions.rb)
 
+Ruby 1.9, 2.0, 2.1, and JRuby supported.
+
 ## Quickstart
 
 Install it:
