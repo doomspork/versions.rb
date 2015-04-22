@@ -54,4 +54,12 @@ describe Versions do
     end
   end
 
+  describe '#base_dir' do
+    before { Versions.config.base_dir = '/' }
+
+    it 'will delegate to config#base_dir' do
+      expect(Versions.base_dir).to eq Versions.config.base_dir
+    end
+  end
+
 end

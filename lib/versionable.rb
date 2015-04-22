@@ -39,13 +39,9 @@ module Versionable
     def loaded_versions
       @loaded_versions ||= Hash.new { |hash, key| hash[key] = versions_rb.select(key) }
     end
-   
+
     def versions_rb
       @versions_rb ||= Versions.for(self.name).at(versions_directory)
     end
-  end
-
-  def version
-    @instances_version
   end
 end

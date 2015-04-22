@@ -1,3 +1,5 @@
+require 'forwardable'
+
 require 'versionable.rb'
 require 'versions/configurable.rb'
 require 'versions/file_helpers.rb'
@@ -11,6 +13,11 @@ class Versions
   include FileHelpers
   include ClassHelpers
   include StringHelpers
+
+  class << self
+    extend Forwardable
+    def_delegators :config, :base_dir, :version_pattern, :class_prefix
+  end
 
   # Public: Sets up and returns a new instance
   #
