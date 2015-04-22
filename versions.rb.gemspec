@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'versions.rb'
-  s.version     = '1.0' 
+  s.version     = '1.1' 
   s.summary     = 'Support for versioned class definitions.'
   s.description = 'Using simple namespacing Versions.rb lets you load versions of your code on-demand.'
   s.authors     = ['Sean Callan']
@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'coveralls',   '~> 0.7' unless RUBY_PLATFORM =~ /java/
   s.add_development_dependency 'pry',         '~> 0.10'
   s.add_development_dependency 'rake',        '~> 10.0'
-  s.add_development_dependency 'rr',          '~> 1.1.2'
+  s.add_development_dependency 'rr',          '~> 1.1'
   s.add_development_dependency 'rspec',       '~> 3.1'
   s.add_development_dependency 'simplecov',   '~> 0.9'
 end
